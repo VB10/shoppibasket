@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppibasket/product/model/user_model.dart';
-import './basket_view_model.dart';
+
+import '../../product/model/user_model.dart';
+import 'basket_view_model.dart';
 
 class BasketView extends BasketViewModel {
   @override
@@ -19,8 +20,7 @@ class BasketView extends BasketViewModel {
                 return Column(
                   children: [
                     Image.network(product.image),
-                    Text(
-                        "${context.watch<User>().basketProducts[product]} * ${product.price}"),
+                    Text("${context.watch<User>().basketProducts[product]} * ${product.price}"),
                   ],
                 );
               },
@@ -28,8 +28,7 @@ class BasketView extends BasketViewModel {
           ),
           RaisedButton(
             child: Text("Minumum 100 TL"),
-            onPressed:
-                context.watch<User>().basketTotalMoney > 100 ? () {} : null,
+            onPressed: context.watch<User>().basketTotalMoney > 100 ? () {} : null,
           )
         ],
       ),

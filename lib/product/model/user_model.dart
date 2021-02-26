@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppibasket/features/products/model/product_model.dart';
-import 'package:shoppibasket/product/service/user_service.dart';
+
+import '../../features/products/model/product_model.dart';
+import '../service/user_service.dart';
 
 class User extends ChangeNotifier {
   Map<Product, int> basketProducts = {};

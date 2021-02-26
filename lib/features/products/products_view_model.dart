@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppibasket/product/service/user_service.dart';
-import './products.dart';
+import '../../product/service/user_service.dart';
+import 'products.dart';
 import 'model/product_model.dart';
 
 abstract class ProductsViewModel extends State<Products> {

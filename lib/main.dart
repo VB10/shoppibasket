@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppibasket/product/model/user_model.dart';
-import 'package:shoppibasket/product/service/user_service.dart';
 
 import 'features/tabs/shoppi_tab_view.dart';
+import 'product/model/user_model.dart';
+import 'product/service/user_service.dart';
 
 void main() => runApp(MultiProvider(
-      providers: [
-        Provider<UserService>(create: (context) => UserService()),
-        ChangeNotifierProvider(create: (context) => User(context))
-      ],
+      providers: [Provider<UserService>(create: (context) => UserService()), ChangeNotifierProvider(create: (context) => User(context))],
       child: MyApp(),
     ));
 

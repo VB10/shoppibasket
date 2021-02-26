@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppibasket/features/basket/basket.dart';
-import 'package:shoppibasket/features/basket/basket_view.dart';
-import 'package:shoppibasket/features/products/products.dart';
-import 'package:shoppibasket/product/model/user_model.dart';
+
+import '../../product/model/user_model.dart';
+import '../basket/basket.dart';
+import '../products/products.dart';
 
 class ShoppiTabView extends StatelessWidget {
   @override
@@ -31,12 +31,7 @@ class ShoppiTabView extends StatelessWidget {
               icon: Stack(
                 children: [
                   Icon(Icons.shopping_basket),
-                  Positioned(
-                      top: 0,
-                      right: 0,
-                      height: 10,
-                      width: 10,
-                      child: buildCircleAvatarCounter(context)),
+                  Positioned(top: 0, right: 0, height: 10, width: 10, child: buildCircleAvatarCounter(context)),
                 ],
               ),
             )
@@ -48,11 +43,7 @@ class ShoppiTabView extends StatelessWidget {
   CircleAvatar buildCircleAvatarCounter(BuildContext context) {
     return CircleAvatar(
       backgroundColor: Colors.red,
-      child: Text(context.watch<User>().totalProduct.toString(),
-          style: Theme.of(context)
-              .textTheme
-              .overline
-              .copyWith(color: Colors.white)),
+      child: Text(context.watch<User>().totalProduct.toString(), style: Theme.of(context).textTheme.overline.copyWith(color: Colors.white)),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shoppibasket/features/products/model/product_model.dart';
-import 'package:shoppibasket/product/model/user_model.dart';
+
+import '../../../features/products/model/product_model.dart';
+import '../../model/user_model.dart';
 
 class ShopCard extends StatelessWidget {
   final Product product;
@@ -26,9 +27,7 @@ class ShopCard extends StatelessWidget {
   Widget buildSizedBoxImage(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-            height: MediaQuery.of(context).size.height * 0.2,
-            child: Image.network(product.image)),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.2, child: Image.network(product.image)),
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Container(
           color: Colors.black12,
