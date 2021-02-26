@@ -8,7 +8,6 @@ import 'products_view_model.dart';
 class ProductsView extends ProductsViewModel {
   @override
   Widget build(BuildContext context) {
-    // Replace this with your build function
     return Scaffold(
       appBar: AppBar(actions: [buildActionChipTotalMoney()]),
       body: ListView.builder(
@@ -20,11 +19,13 @@ class ProductsView extends ProductsViewModel {
     );
   }
 
-  ActionChip buildActionChipTotalMoney() {
+  Widget buildActionChipTotalMoney() {
     return ActionChip(
       avatar: Icon(Icons.check, color: Colors.green),
       label: Text("${context.watch<User>().basketTotalMoney} TL"),
-      onPressed: () {},
+      onPressed: () {
+        // TODO: Define user press
+      },
     );
   }
 }
