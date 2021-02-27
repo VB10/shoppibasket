@@ -1,16 +1,13 @@
 # shoppibasket
 
-A new Flutter project.
+![Thumbnail](https://img.youtube.com/vi/T_ZxOwVOOHs/maxresdefault.jpg)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+A shopping provider arcihtecture sample.
 
-A few resources to get you started if this is your first Flutter project:
+[Backed Repo](https://github.com/VB10/basket-shop)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[Youtube Video](https://www.youtube.com/watch?v=T_ZxOwVOOHs)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
