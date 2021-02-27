@@ -6,7 +6,10 @@ import 'product/model/user_model.dart';
 import 'product/service/user_service.dart';
 
 void main() => runApp(MultiProvider(
-      providers: [Provider<UserService>(create: (context) => UserService()), ChangeNotifierProvider(create: (context) => User(context))],
+      providers: [
+        Provider<UserService>(create: (context) => UserService()),
+        ChangeNotifierProvider<User>(create: (context) => User(context)),
+      ],
       child: MyApp(),
     ));
 

@@ -5,8 +5,6 @@ import 'products.dart';
 import 'model/product_model.dart';
 
 abstract class ProductsViewModel extends State<Products> {
-  // Add your state and logic here
-
   List<Product> products = [];
 
   @override
@@ -16,7 +14,6 @@ abstract class ProductsViewModel extends State<Products> {
   }
 
   Future<void> getAllProducts() async {
-    // Provider
     products = await context.read<UserService>().getAllProducts();
     setState(() {});
   }
