@@ -18,7 +18,7 @@ class BasketView extends BasketViewModel {
                 final product = context.watch<User>().basketItems[index];
                 return Column(
                   children: [
-                    Image.network(product.image),
+                    Image.network(product.image!),
                     Text(
                         "${context.watch<User>().basketProducts[product]} * ${product.price}"),
                   ],

@@ -51,7 +51,7 @@ class ShoppiTabView extends StatelessWidget {
       child: Text(context.watch<User>().totalProduct.toString(),
           style: Theme.of(context)
               .textTheme
-              .overline
+              .overline!
               .copyWith(color: Colors.white)),
     );
   }

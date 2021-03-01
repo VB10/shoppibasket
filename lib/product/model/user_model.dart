@@ -6,7 +6,7 @@ import 'package:shoppibasket/product/service/user_service.dart';
 class User extends ChangeNotifier {
   Map<Product, int> basketProducts = {};
 
-  UserService service;
+  late UserService service;
 
   User(BuildContext context) {
     service = context.read<UserService>();
@@ -20,7 +20,7 @@ class User extends ChangeNotifier {
     } else {
       double _total = 0;
       basketProducts.forEach((key, value) {
-        _total += key.price * value;
+        _total += key.price! * value;
       });
       return _total;
     }
@@ -40,8 +40,13 @@ class User extends ChangeNotifier {
     if (basketProducts[product] == null) {
       addFirstItemToBasket(product);
       return;
-    } else
-      basketProducts[product]++;
+    } else {
+      var value = basketProducts[product];
+      if (value != null) {
+        value++;
+        basketProducts[product] = value;
+      }
+    }
     notifyListeners();
   }
 
@@ -50,7 +55,11 @@ class User extends ChangeNotifier {
     if (basketProducts[product] == 0) {
       basketProducts.removeWhere((key, value) => key == product);
     } else {
-      basketProducts[product]--;
+      var value = basketProducts[product];
+      if (value != null) {
+        value--;
+        basketProducts[product] = value;
+      }
     }
     notifyListeners();
   }

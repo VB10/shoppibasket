@@ -4,12 +4,10 @@ import 'package:dio/dio.dart';
 import 'package:shoppibasket/features/products/model/product_model.dart';
 
 class UserService {
-  Dio dio;
+  late Dio dio;
 
   UserService() {
-    dio = Dio(BaseOptions(
-        baseUrl:
-            Platform.isIOS ? "http://localhost:3000" : "http://10.0.2.2:3000"));
+    dio = Dio(BaseOptions(baseUrl: Platform.isIOS ? "http://localhost:3000" : "http://10.0.2.2:3000"));
   }
 
   Future<List<Product>> getAllProducts() async {
@@ -25,9 +23,7 @@ class UserService {
   }
 
   Future<bool> addProduct(Product product) async {
-    final response = await dio.post("/product",
-        data: product.toJson(),
-        options: Options(headers: {"user-id": "5fbd48380fe34c4b213dfe6b"}));
+    final response = await dio.post("/product", data: product.toJson(), options: Options(headers: {"user-id": "5fbd48380fe34c4b213dfe6b"}));
 
     if (response.statusCode == HttpStatus.ok) {
       return true;

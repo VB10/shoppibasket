@@ -6,7 +6,7 @@ import 'package:shoppibasket/product/model/user_model.dart';
 class ShopCard extends StatelessWidget {
   final Product product;
 
-  const ShopCard({Key key, @required this.product}) : super(key: key);
+  const ShopCard({Key? key, required this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -28,7 +28,7 @@ class ShopCard extends StatelessWidget {
       children: [
         SizedBox(
             height: MediaQuery.of(context).size.height * 0.2,
-            child: Image.network(product.image)),
+            child: Image.network(product.image!)),
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Container(
           color: Colors.black12,
@@ -59,7 +59,7 @@ class ShopCard extends StatelessWidget {
     return Wrap(
       spacing: 10,
       children: [
-        Text(product.name),
+        Text(product.name!),
         Text("${product.price}"),
       ],
     );

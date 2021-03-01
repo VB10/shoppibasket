@@ -1,9 +1,9 @@
 class Product {
-  String sId;
-  String name;
-  String image;
-  int total;
-  int price;
+  String? sId;
+  String? name;
+  String? image;
+  int? total;
+  int? price;
 
   Product({this.sId, this.name, this.image, this.total, this.price});
 
