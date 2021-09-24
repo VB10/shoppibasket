@@ -21,7 +21,7 @@ class User extends ChangeNotifier {
     } else {
       double _total = 0;
       basketProducts.forEach((key, value) {
-        _total += key.price * value;
+        _total += (key.price ?? 0) * value;
       });
       return _total;
     }
@@ -42,16 +42,15 @@ class User extends ChangeNotifier {
       addFirstItemToBasket(product);
       return;
     } else
-      basketProducts[product]++;
+      basketProducts[product] = (basketProducts[product] ?? 0) + 1;
     notifyListeners();
   }
 
   void increseProduct(Product product) {
-    if (basketProducts[product] == null) return;
-    if (basketProducts[product] == 0) {
+    if (basketProducts[product] != null && basketProducts[product] != 0) {
+      basketProducts[product] = (basketProducts[product] ?? 0) - 1;
+    } else if (basketProducts[product] == 0) {
       basketProducts.removeWhere((key, value) => key == product);
-    } else {
-      basketProducts[product]--;
     }
     notifyListeners();
   }
